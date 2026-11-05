@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommunityApplications>
+  <Profile>Official Unraid Docker template repository for Maily (The Universal Temporary Email Gateway &amp; REST API Platform) maintained by stormsia.</Profile>
+  <Icon>https://raw.githubusercontent.com/stormsia/unraid-templates/main/icon.png</Icon>
+  <WebPage>https://github.com/stormsia/maily</WebPage>
+  <Support>https://github.com/stormsia/maily/issues</Support>
+  <DonateLink></DonateLink>
+  <DonateText></DonateText>
+</CommunityApplications>

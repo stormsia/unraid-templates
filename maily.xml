@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>maily</Name>
+  <Repository>ghcr.io/stormsia/maily:latest</Repository>
+  <Registry>https://github.com/stormsia/maily/pkgs/container/maily</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/stormsia/maily/issues</Support>
+  <Project>https://github.com/stormsia/maily</Project>
+  <Overview>Maily is the Universal Temporary Email Gateway &amp; REST API Platform. Aggregates 8+ disposable email providers (Mail.tm, TempMail Plus, Temp-Mail.io, NoopMail, DispoEmail, and Gmail OAuth2) under a single high-performance REST API with 1-line automatic OTP verification code extraction and a sleek dark-mode web console.</Overview>
+  <Category>Tools:Utilities Productivity: Network:Management</Category>
+  <WebUI>http://[IP]:[PORT:8477]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/stormsia/unraid-templates/main/templates/maily.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/stormsia/unraid-templates/main/icon.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Universal Temporary Email Gateway &amp; REST API Platform</Description>
+  <Config Name="WebUI &amp; API Port" Target="8477" Default="8477" Mode="tcp" Description="HTTP Port for the Maily Dark Dashboard and REST API" Type="Port" Display="always" Required="true" Mask="false">8477</Config>
+  <Config Name="Data Storage Path" Target="/data" Default="/mnt/user/appdata/maily" Mode="rw" Description="Persistent directory for SQLite database (maily.db) and Fernet encryption key (maily.key)" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/maily</Config>
+  <Config Name="Master API Key" Target="MAILY_API_KEY" Default="your_secret_api_key" Mode="" Description="Master Root API Key to secure dashboard and REST API. Must be non-empty when accessible across network." Type="Variable" Display="always" Required="true" Mask="true">your_secret_api_key</Config>
+  <Config Name="Bind Host" Target="MAILY_HOST" Default="0.0.0.0" Mode="" Description="Bind host inside container (0.0.0.0 for Docker networking)" Type="Variable" Display="advanced" Required="false" Mask="false">0.0.0.0</Config>
+  <Config Name="Bind Port" Target="MAILY_PORT" Default="8477" Mode="" Description="Internal container port" Type="Variable" Display="advanced" Required="false" Mask="false">8477</Config>
+  <Config Name="Database URI" Target="MAILY_DATABASE_URL" Default="sqlite+aiosqlite:////data/maily.db" Mode="" Description="SQLite database URI" Type="Variable" Display="advanced" Required="false" Mask="false">sqlite+aiosqlite:////data/maily.db</Config>
+  <Config Name="Secret Key Path" Target="MAILY_SECRET_KEY_PATH" Default="/data/maily.key" Mode="" Description="Fernet encryption key path for credentials vault" Type="Variable" Display="advanced" Required="false" Mask="false">/data/maily.key</Config>
+</Container>
